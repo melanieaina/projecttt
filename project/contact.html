@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="contact.css">
+
+
+</head>
+<body>
+
+    <section class="header">
+        <nav>
+            <!-- <a href="index.html"><img src="" alt="logo"></a> -->
+            <div class="nav-links" id="navLinks">
+               <i class="fa fa-times" onclick="hideMenu()"></i>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#mm">About</a></li>
+                   <li><a href="contact.html">Contact Us</a></li>
+               </ul>
+            </div> 
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+         </nav>
+      </section>
+    <div class="container">
+            <h2>Contact Us</h2>
+            <form onsubmit="return false">
+                <input type="text" name="firstname" id="fname" placeholder="First name"/>
+                <input type="text" name="lastname" id="lname" placeholder="Last name"/>
+                <input type="emailadress" name="emailaddress" id="eaddress" placeholder="Email Address"/>
+                <textarea name="question" id="question" rows="3" placeholder="Enter your Question"></textarea>
+                <input type="submit" onclick="submit()" value="Submit">
+            </form>
+        </div>
+        <script>
+
+        var fields = {};
+        document.addEventListener("DOMContentLoaded", function() {
+            fields.fname= document.getElementById('fname');
+            fields.lname = document.getElementById('lname');
+            fields.eaddress = document.getElementById('eaddress');
+            fields.question = document.getElementById('question');
+            })
+
+        function isNotEmpty(value) {
+            if (value == null || typeof value == 'undefined' ) return false;
+            return (value.length > 0);
+            }
+
+        class User {
+            constructor(fname, lname, eaddress, question) {
+            this.fname = fname;
+            this.lname = lname;
+            this.eaddress = eaddress;
+            this.question = question;
+            }
+        }
+       
+
+        </script>
+    </body>
+</html>
